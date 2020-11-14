@@ -195,11 +195,13 @@ p {
   display: flex;
   justify-content: space-between;
 }
+
 .social-link {
   font-size: 1.75rem;
   color: var(--clr-grey-1);
   transition: var(--transition);
 }
+
 .social-link:hover {
   color: var(--clr-primary-5);
 }
@@ -569,6 +571,7 @@ Jobs
   justify-content: center;
   margin-bottom: 4rem;
 }
+
 .job-btn {
   background: transparent;
   border-color: transparent;
@@ -581,6 +584,7 @@ Jobs
   padding: 0.25rem 0;
   line-height: 1;
 }
+
 .job-btn:hover {
   color: var(--clr-primary-5);
   box-shadow: 0 2px var(--clr-primary-5);
@@ -856,23 +860,25 @@ Blog
 Footer
 ===============
 */
-.footer {
+
+/* .footer {
   height: 9rem;
   background: #222;
   text-align: center;
   display: grid;
   place-items: center;
-}
+} */
+
 .footer h4 {
   margin-top: 0.5rem;
   color: var(--clr-white);
   font-weight: normal;
   text-transform: uppercase;
 }
+
 .footer h4 span {
   color: var(--clr-primary-5);
 }
-
 
 .footer-links {
   margin: 0 auto 1rem auto;
@@ -880,6 +886,7 @@ Footer
 .footer .social-link {
   color: var(--clr-white);
 }
+
 .footer .social-link:hover {
   color: var(--clr-primary-5);
 }
