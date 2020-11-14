@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_description_stacks",
+  "info": {
+    "name": "stack_item",
+    "icon": "address-card"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
