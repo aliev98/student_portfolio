@@ -1,6 +1,6 @@
 import React from "react"
 import SocialLinks from "../constants/socialLinks"
-import styled from 'styled-components'
+ import styled from 'styled-components'
 
 const FooterStyling = styled.footer `
 height: 9rem;
@@ -18,10 +18,11 @@ height: 9rem;
     }
   }
 `
+
 const Footer = () => {
   return (
-      // <footer className="footer"> 
-       <FooterStyling>
+      //  <footer className="footer"> 
+         <FooterStyling>
       <div className="footer-content">
         <SocialLinks styleClass="footer-links"></SocialLinks>
         <h4>

@@ -1,4 +1,4 @@
-// import "./src/css/main.css"
+ import "./src/css/main.css"
 import React from "react"
 import { createGlobalStyle, ThemeProvider } from "styled-components"
 import Theme from "./src/themes/theme"

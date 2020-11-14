@@ -8,6 +8,7 @@ export default {
       normal: "400",
       bold: "700",
     },
+    
     colors: {
       primary1: "hsl(184, 91%, 17%)",
       primary2: "hsl(185, 84%, 25%)",

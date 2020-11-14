@@ -1,12 +1,12 @@
-// import "./src/css/main.css"
+import "./src/css/main.css"
 import React from "react"
 import { createGlobalStyle, ThemeProvider } from "styled-components"
 import Theme from "./src/themes/theme"
 
-/*
-    In this file I will create the global styles and make the styling theme
-    available in all underlying components.
-*/
+// /*
+//     In this file I will create the global styles and make the styling theme
+//     available in all underlying components.
+// */
 
 const GlobalStyles = createGlobalStyle`
   *,
