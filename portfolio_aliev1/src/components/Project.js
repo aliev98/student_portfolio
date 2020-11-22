@@ -176,7 +176,7 @@ const Project = ({ description, title, github, stack, url, image, index }) => {
             return <span key={item.id}>{item.title}</span>
           })}
         </ProjectStack>
-        <Projects>
+        <ProjectLinks>
           {/*
           When I don't have links to my projects, I have fill the required 
           field in the strapi entry with a / . I will, for now, not display 
@@ -192,7 +192,7 @@ const Project = ({ description, title, github, stack, url, image, index }) => {
               <FaShareSquare />
             </a>
           )}
-        </Projects>
+        </ProjectLinks>
       </ProjectInfo>
     </StyledProject>
   )
