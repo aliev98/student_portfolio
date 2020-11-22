@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{w2l6:function(e,a,n){"use strict";n.r(a);var t=n("q1tI"),l=n.n(t),r=n("7oih"),c=n("Wbzz");n("EYWl");a.default=function(){return l.a.createElement(r.a,null,l.a.createElement("main",{className:"error-page"},l.a.createElement("div",{className:"error-container"},l.a.createElement("h1",null,"Oj, Något gick fel"),l.a.createElement(c.a,{to:"/",className:"btn"},"Tillbaka Hem"))))}}}]);
+//# sourceMappingURL=component---src-pages-404-js-16f7e106c91d7158455e.js.map

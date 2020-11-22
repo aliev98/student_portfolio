@@ -8,17 +8,18 @@ module.exports = {
   siteMetadata: {
     title: "WebDev Portfolio",
     description: "This is WebDev Portfolio Site",
-    author: "@Sohail",
-    twitterUsername: "@RajaHasware",
+    author: "@aliev",
+    twitterUsername: "@aliev98",
     image: "/twitter-img.png",
     siteUrl: "https://my-amazing-portflio.netlify.app",
   },
+  
   plugins: [
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
-     `gatsby-plugin-styled-components`,
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -39,19 +40,31 @@ module.exports = {
         singleTypes: [`about`],
       },
     },
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+{
+    resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          {
-            family: `Roboto`,
-            variants: [`400`, `700`],
-          },
-          {
-            family: `Open Sans`,
-          },
+        fonts: [ 
+          `limelight`,
+          `source sans pro\:300,400,400i,700` // you can also specify font weights and styles
         ],
-      },
+
+        display: 'swap'
+      }
     },
+    // {
+    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
+    //   options: {
+    //     fonts: [
+    //       {
+    //         family: `Roboto`,
+    //         variants: [`400`, `700`],
+    //       },
+    //       {
+    //         family: `Open Sans`,
+    //       },
+    //     ],
+    //   },
+    // },
+
   ],
 }

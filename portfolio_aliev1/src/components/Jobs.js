@@ -1,12 +1,52 @@
-import React from "react"
+import React, {useState} from "react"
 import Title from "./Title"
-import { FaAngleDoubleRight } from "react-icons/fa"
 import { graphql, useStaticQuery } from "gatsby"
-import { Link } from "gatsby"
+import OuterContentContainer from "./containers/OuterPart"
+import InnerContentContainer from "./containers/InnerPart"
+import JobDescription from "./containers/JobDescription"
+import JobButton from "./containers/JobButton"
+import ButtonLink from "./containers/ButtonLink"
+import styled from "styled-components"
 
+// Here we define the Jobs section 
+
+const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 4rem;
+
+  
+  @media screen and (min-width: 992px) {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+`
+
+
+
+const JobInfo = styled.article`
+  h3 {
+    font-weight: 400;
+  }
+
+  
+  h4 {
+    text-transform: uppercase;
+    color: ${({ theme }) => theme.colors.grey5};
+    background: ${({ theme }) => theme.colors.grey9};
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    border-radius: ${({ theme }) => theme.radius.radius};
+  }
+`
+const JobDate = styled.p`
+  letter-spacing: ${({ theme }) => theme.spacings.spacing};
+`
 const query = graphql`
   {
-    allStrapiJobs(sort: { fields: strapiId, order: DESC }) {
+    allStrapiJobs(sort: { fields: date, order: DESC }) {
       nodes {
         strapiId
         company
@@ -23,54 +63,43 @@ const query = graphql`
 
 const Jobs = () => {
   const data = useStaticQuery(query)
-  console.log(data)
   // destructering
   const {
     allStrapiJobs: { nodes: jobs },
   } = data
-  console.log(jobs)
-  const [value, setValue] = React.useState(0)
+  const [value, setValue] = useState(0)
   const { company, position, date, desc } = jobs[value]
-  console.log(company, position, date, desc)
 
   return (
-    <section className="section jobs">
+    <OuterContentContainer>
       <Title title="erfarenhet" />
-      <div className="jobs-center">
-        {/* btn container */}
-        <div className="btn-container">
+      <InnerContentContainer type="jobs">
+        <ButtonContainer>
           {jobs.map((item, index) => {
             return (
-              <button
+              <JobButton
                 key={item.strapiId}
-                onClick={() => setValue(index)}
-                className={`job-btn ${index === value && "active-btn"}`}
-              >
-                {item.company}
-              </button>
+                render={() => setValue(index)}
+                active={index === value && true}
+                item={item.company}
+              />
             )
           })}
-        </div>
-        {/* job info */}
-        <article className="job-info">
+        </ButtonContainer>
+
+        <JobInfo>
           <h3>{position}</h3>
           <h4>{company}</h4>
-          <p className="job-date">{date}</p>
+          <JobDate>{date}</JobDate>
           {desc.map(item => {
-            return (
-              <div key={item.id} className="job-desc">
-                <FaAngleDoubleRight className="job-icon"></FaAngleDoubleRight>
-                <p>{item.name}</p>
-              </div>
-            )
+            return <JobDescription key={item.id} name={item.name} />
           })}
-        </article>
-      </div>
-      <Link to="/about" className="btn center-btn">
-        Mitt CV
-      </Link>
-    </section>
+        </JobInfo>
+      </InnerContentContainer>
+      <ButtonLink to="/about" center name="Mitt CV" />
+    </OuterContentContainer>
   )
 }
 
 export default Jobs
+

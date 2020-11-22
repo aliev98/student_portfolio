@@ -7,11 +7,13 @@ import Jobs from "../components/Jobs"
 import Projects from "../components/Projects"
 import Blogs from "../components/Blogs"
 import SEO from "../components/SEO"
+
 export default ({ data }) => {
   const {
     allStrapiProjects: { nodes: projects },
     allStrapiBlogs: { nodes: blogs },
   } = data
+  
   return (
     <Layout>
       <SEO title="Hem" description="Startsidan" />
@@ -19,6 +21,7 @@ export default ({ data }) => {
       <Services />
       <Jobs />
       <Projects projects={projects} title="projekt i fokus" showLink />
+
       <Blogs blogs={blogs} title="Senaste artiklar" showLink />
     </Layout>
   )
@@ -46,6 +49,7 @@ export const query = graphql`
         }
       }
     }
+
     allStrapiBlogs(sort: { fields: date, order: DESC }, limit: 3) {
       nodes {
         slug

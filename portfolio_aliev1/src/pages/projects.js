@@ -9,6 +9,7 @@ const ProjectsPage = ({
   data: {
     allStrapiProjects: { nodes: projects },
   },
+
 }) => {
   return (
     <Layout>
@@ -22,7 +23,7 @@ const ProjectsPage = ({
 
 export const query = graphql`
   {
-    allStrapiProjects {
+   allStrapiProjects {
       nodes {
         github
         id

@@ -18,7 +18,6 @@ const FooterStyling = styled.footer `
     span {
       color: ${({ theme }) => theme.colors.primary5};
     }
-    
   }
 `
 
@@ -26,7 +25,7 @@ const FooterStyling = styled.footer `
 const Footer = () => {
   return (
       //  <footer className="footer"> 
-         <FooterStyling>
+      <FooterStyling>
 
       <div className="footer-content">
         <SocialLinks styleClass="footer-links"></SocialLinks>

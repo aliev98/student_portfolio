@@ -8,6 +8,7 @@ import ReactMarkdown from "react-markdown"
 import SEO from "../components/SEO"
 import downloadFile from "../../static/SohailCV2020.pdf"
 // ...GatsbyImageSharpFluid
+
 const About = ({
   data: {
     about: { nodes },

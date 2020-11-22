@@ -8,8 +8,8 @@ var plugins = [{
       plugin: require('C:/Users/kuba-/OneDrive/Skrivbord/student_portfolio/portfolio_aliev1/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
       options: {"plugins":[]},
     },{
-      plugin: require('C:/Users/kuba-/OneDrive/Skrivbord/student_portfolio/portfolio_aliev1/node_modules/gatsby-plugin-prefetch-google-fonts/gatsby-ssr'),
-      options: {"plugins":[],"fonts":[{"family":"Roboto","variants":["400","700"]},{"family":"Open Sans"}]},
+      plugin: require('C:/Users/kuba-/OneDrive/Skrivbord/student_portfolio/portfolio_aliev1/node_modules/gatsby-plugin-google-fonts/gatsby-ssr'),
+      options: {"plugins":[],"fonts":["limelight","source sans pro:300,400,400i,700"],"display":"swap"},
     },{
       plugin: require('C:/Users/kuba-/OneDrive/Skrivbord/student_portfolio/portfolio_aliev1/gatsby-ssr'),
       options: {"plugins":[]},
