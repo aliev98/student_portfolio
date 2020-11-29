@@ -3,27 +3,33 @@ import Layout from "../components/Layout"
 import { graphql } from "gatsby"
 import Projects from "../components/Projects"
 import SEO from "../components/SEO"
-// ...GatsbyImageSharpFluid
+import styled from "styled-components"
+
+// Here we define the projects page
+
+const ProjectsContainer = styled.section`
+  background: ${({ theme }) => theme.colors.grey10};
+  min-height: calc(100vh - 5rem - 9rem);
+`
 
 const ProjectsPage = ({
   data: {
     allStrapiProjects: { nodes: projects },
   },
-
 }) => {
   return (
     <Layout>
       <SEO title="Projekt" description="Projektsidan" />
-      <section className="project-page">
+      <ProjectsContainer>
         <Projects projects={projects} title="Alla projekt" />
-      </section>
+      </ProjectsContainer>
     </Layout>
   )
 }
 
 export const query = graphql`
   {
-   allStrapiProjects {
+    allStrapiProjects {
       nodes {
         github
         id

@@ -39,6 +39,7 @@ export default {
     greendark: "hsl(125, 67%, 35%)",
     reddark: "hsl(360, 67%, 44%)",
     redlight: "hsl(360, 71%, 66%)",
+    lightblue: "#add8e6",
     white: "#fff",
   },
   transitions: {

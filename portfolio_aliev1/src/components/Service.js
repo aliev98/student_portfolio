@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Underline } from "./Underline"
+
 // This component will hold the content of one service card
 
 const StyledService = styled.article`
@@ -16,7 +17,6 @@ const StyledService = styled.article`
     background: ${({ theme }) => theme.colors.primary5};
     color: ${({ theme }) => theme.colors.primary9};
   }
-
   :hover p {
     color: ${({ theme }) => theme.colors.primary9};
   }

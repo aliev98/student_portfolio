@@ -4,20 +4,22 @@ import Image from "gatsby-image"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
+// The component holds one blogpost card 
 
-const BlogStyling = styled.article`
+const StyledBlog = styled.article`
+  display: block;
+  margin-bottom: 2rem;
+  background: ${({ theme }) => theme.colors.grey10};
+  border-radius: ${({ theme }) => theme.radius.radius};
+  box-shadow: ${({ theme }) => theme.shadows.lightShadow};
+  transition: ${({ theme }) => theme.transitions.transition};
 
-display:block;
-margin-bottom: 2rem;
-background: ${({theme}) => theme.colors.grey10 };
-border-radius: ${({theme}) => theme.radius.radius};
-box-shadow: ${({theme}) => theme.shadows.lightShadow};
-transition: ${({theme}) => theme.transitions.transition};
 
 :hover {
   box-shadow: ${({ theme }) => theme.shadows.darkShadow};
-  transform: scale(1.09);
+  transform: scale(1.02);
 }
+
 
 `
 
@@ -25,11 +27,11 @@ const StyledImage = styled ( props => <Image {...props} />)`
   border-top-left-radius: ${({ theme }) => theme.radius.radius};
   border-top-right-radius: ${({ theme }) => theme.radius.radius};
   height: 15rem;
-  background-color:blue;
-
+  
   @media screen and (min-width: 576px) {
     height: 17.5rem;
   }
+
   @media screen and (min-width: 850px) {
     height: 13.75rem;
   }
@@ -39,16 +41,15 @@ const BlogCard = styled.div`
   display: grid;
   grid-template-rows: auto 1fr auto;
   padding: 1.5rem 1rem;
-  
   h4 {
     color: ${({ theme }) => theme.colors.grey1};
   }
 `
-
-const Footer = styled.div` 
+const Footer = styled.div` {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
 
   p {
     margin-bottom: 0;
@@ -69,42 +70,27 @@ const Footer = styled.div`
   }
 `
 
-
 const Blog = ({ id, title, image, date, category, slug, desc }) => {
   return (
-    
     <Link to={`/blogs/${slug}`} key={id}>
-
-    <BlogStyling>
-    
-      {/* <article className="blog"> */}
+      <StyledBlog>
         {/* if image is not supplied, instead of breaking, dont show any image */}
-        {/* {image && (<Image fluid={image.childImageSharp.fluid} className="blog-img" />)} */}
         {image && <StyledImage fluid={image.childImageSharp.fluid} />}
 
         <BlogCard>
-        {/* <div className="blog-card"> */}
           {/* if title is not supplied, set a defualt title */}
-          
-          <h4>{title || "Ariklar"}</h4>
+          <h4>{title || "Artiklar"}</h4>
           <p>{desc}</p>
-
           <Footer>
             <p>{category}</p>
             <p>{date}</p>
           </Footer>
-
-
-      </BlogCard>
-
-        {/* </div> */}
-      {/* </article> */}
-    </BlogStyling>
-
+        </BlogCard>
+        
+      </StyledBlog>
     </Link>
   )
 }
-
 
 Blog.propTypes = {
   id: PropTypes.string.isRequired,

@@ -123,8 +123,8 @@ const GlobalStyles = createGlobalStyle`
         margin-bottom: 1.25rem;
         color: ${({ theme }) => theme.colors.grey3};
       }
-    
-      
+  
+  
       section {
         padding: 5rem 0;
       }

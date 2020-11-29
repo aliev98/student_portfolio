@@ -23,7 +23,8 @@
 
 
 import React from "react"
-import logo from "../assets/logo.svg"
+// import logo from "../assets/logo.svg"
+import logo from "../assets/gglogo.png"
 import { FaAlignRight } from "react-icons/fa"
 import Links from "../constants/links"
 import styled from "styled-components"
@@ -36,6 +37,7 @@ import styled from "styled-components"
 
 
 const StyledNavBar = styled.nav`
+
   position: sticky;
   top: 0;
   left: 0;
@@ -46,12 +48,12 @@ const StyledNavBar = styled.nav`
   display: flex;
   align-items: center;
   z-index: 200;
-  background: ${({ theme }) => theme.colors.primary11};
+  background: ${({ theme }) => theme.colors.primary3};
 `
 
 const NavCenter = styled.div`
   width: 90vw;
-  max-width: 1170px;
+  max-width: 1190px;
   margin: 0 auto;
 
   @media screen and (min-width: 768px) {
@@ -65,14 +67,17 @@ const NavHeader = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  
   img {
     display: none;
   }
-  @media screen and (min-width: 768px) {
+
+  @media screen and (min-width: 865px) {
     justify-content: space-between;
     img {
       display: block;
       margin-bottom: 0.375rem;
+      height:3rem;
     }
   }
 `
@@ -86,17 +91,20 @@ const NavLink = styled.div`
       li {
         margin-right: 2rem;
       }
+
       a {
         text-transform: capitalize;
         color: ${({ theme }) => theme.colors.white};
         font-weight: bold;
         letter-spacing: ${({ theme }) => theme.spacings.spacing};
         transition: ${({ theme }) => theme.transitions.transition};
-        padding: 0.5rem 0;
+        padding: 0.2rem 0;
 
         &:hover {
-          color: ${({ theme }) => theme.colors.primary5};
-          box-shadow: 0px 2px ${({ theme }) => theme.colors.primary5};
+          color: ${({ theme }) => theme.colors.grey4};
+          background: ${({ theme }) => theme.colors.lightblue };
+          border-radius:20%;
+          /* box-shadow: 0px 2px ${({ theme }) => theme.colors.primary5}; */
         }
       }
     }
@@ -122,12 +130,14 @@ export const Navbar = ({ toggleSidebar }) => {
   return (
     <StyledNavBar>
       <NavCenter>
+        
         <NavHeader>
           <img src={logo} alt="logo" />
           <ToggleButton  onClick={toggleSidebar}>
             <FaAlignRight></FaAlignRight>
           </ToggleButton>
         </NavHeader>
+
         <NavLink>
           <Links type="navbar"/>
         </NavLink>

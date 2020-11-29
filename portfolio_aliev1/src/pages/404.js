@@ -1,22 +1,30 @@
 import React from "react"
 import Layout from "../components/Layout"
-import { Link } from "gatsby"
-import SEO from "../components/SEO"
+import styled from "styled-components"
+import ButtonComp from "../components/ButtonLink"
 
+// Our 404 page
+
+const StyledErrorPage = styled.main`
+  background: ${({ theme }) => theme.colors.grey10};
+  min-height: calc(100vh - 5rem - 9rem);
+  text-transform: uppercase;
+  h1{
+  color: ${({ theme }) => theme.colors.primary1};
+  margin-bottom: 2rem;
+  }
+`
 const Error = () => {
   return (
     <Layout>
-      <main className="error-page">
-        <div className="error-container">
+      <StyledErrorPage>
+        <div >
           <h1>Oj, Något gick fel</h1>
-          <Link to="/" className="btn">
-            Tillbaka Hem
-          </Link>
+          <ButtonComp to="/" name="Tillbaka hem"/>
         </div>
-      </main>
+      </StyledErrorPage>
     </Layout>
   )
 }
-
 
 export default Error

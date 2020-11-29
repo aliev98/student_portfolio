@@ -1,33 +1,22 @@
 import React from "react"
 import Title from "./Title"
 import Blog from "./Blog"
-import { Link } from "gatsby"
-import styled from "styled-components"
-import InnerContentContainer from './containers/InnerPart'
-import OuterContentContainer from './containers/OuterPart'
+import OuterContentContainer from "./OuterContentContainer"
+import InsidePart from "./InnerContentContainer"
+import ButtonComp from "./ButtonLink"
 
-//Outside container____________________________________
-
-
-
-//_______________________________________________________
-
-//Inner container________________________________________
-
-
-//________________________________________________________
+// Here we define the blog section
 
 export const Blogs = ({ blogs, title, showLink }) => {
   return (
     <OuterContentContainer>
       <Title title={title} />
-      <InnerContentContainer type="blogs">
+      <InsidePart type="blogs">
         {blogs.map(blog => {
           return <Blog key={blog.id} {...blog} />
         })}
-      </InnerContentContainer>
-      {/* {showLink && <ButtonLink to="/blog" center name="Alla artiklar" />} */}
-      {showLink && (<Link to="/blog" className="btn center-btn">Alla artiklar</Link>)}
+      </InsidePart>
+      {showLink && <ButtonComp to="/blog" center name="Alla artiklar" />}
     </OuterContentContainer>
   )
 }

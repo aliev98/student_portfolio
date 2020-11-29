@@ -1,11 +1,11 @@
 import React, {useState} from "react"
 import Title from "./Title"
 import { graphql, useStaticQuery } from "gatsby"
-import OuterContentContainer from "./containers/OuterPart"
-import InnerContentContainer from "./containers/InnerPart"
-import JobDescription from "./containers/JobDescription"
-import JobButton from "./containers/JobButton"
-import ButtonLink from "./containers/ButtonLink"
+import OuterContentContainer from "./OuterContentContainer"
+import InsidePart from "./InnerContentContainer"
+import JobDescription from "./JobDescription"
+import JobButton from "./JobButton"
+import ButtonComp from "./ButtonLink"
 import styled from "styled-components"
 
 // Here we define the Jobs section 
@@ -17,21 +17,18 @@ const ButtonContainer = styled.div`
   justify-content: center;
   margin-bottom: 4rem;
 
-  
+
+
+
   @media screen and (min-width: 992px) {
     flex-direction: column;
     justify-content: flex-start;
   }
 `
-
-
-
 const JobInfo = styled.article`
   h3 {
     font-weight: 400;
   }
-
-  
   h4 {
     text-transform: uppercase;
     color: ${({ theme }) => theme.colors.grey5};
@@ -73,7 +70,7 @@ const Jobs = () => {
   return (
     <OuterContentContainer>
       <Title title="erfarenhet" />
-      <InnerContentContainer type="jobs">
+      <InsidePart type="jobs">
         <ButtonContainer>
           {jobs.map((item, index) => {
             return (
@@ -95,11 +92,10 @@ const Jobs = () => {
             return <JobDescription key={item.id} name={item.name} />
           })}
         </JobInfo>
-      </InnerContentContainer>
-      <ButtonLink to="/about" center name="Mitt CV" />
+      </InsidePart>
+      <ButtonComp to="/about" center name="Mitt CV" />
     </OuterContentContainer>
   )
 }
 
 export default Jobs
-

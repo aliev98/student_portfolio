@@ -5,7 +5,8 @@ import { graphql, useStaticQuery } from "gatsby"
 import SocialLinks from "../constants/socialLinks"
 // ...GatsbyImageSharpFluid
 import styled from "styled-components"
-
+import ButtonComp from "./ButtonLink"
+import {Underline}   from "./Underline"
 
 const StyledHero = styled.header`
   margin-top: -5rem;
@@ -31,18 +32,21 @@ const HeroSection = styled.section`
 `
 
 const ImageWrapper = styled.div`
+
   /* display: none; */
     grid-row: 1/2;
     grid-column: 2/2;
     
+    img{
+      border-radius:1%;
+    }
   
 @media screen and (min-width: 992px) {
     display: block;
     position:relative;
-    right: 70px;
+    right: 40px;
     grid-row: 3/4;
-    grid-column: 8/-2;
-    border-radius: 0%;
+    grid-column: 8/-3;
 }
 
 @media only screen and (max-width: 600px){
@@ -50,6 +54,7 @@ const ImageWrapper = styled.div`
 }
 
 `
+
 const HeroInfo = styled.article`
   background: ${({ theme }) => theme.colors.white};
   h1,
@@ -71,6 +76,23 @@ const HeroInfo = styled.article`
       line-height:38px;
       margin-bottom:19px;
   }
+}
+`
+
+const Contactbutton = styled.div`
+margin: 1rem 0 1rem 0;
+`
+
+const StyledButton = styled.button`
+
+margin: 0.3rem 1rem 0.3rem 0;
+
+a{
+  color: ${({ theme }) => theme.colors.primary9};
+  &:hover {
+    color:${({ theme }) => theme.colors.primary1}
+     
+}
 }
 `
 
@@ -105,9 +127,14 @@ const Hero = () => {
         <HeroInfo>
           <div>
             <h1>I'm Ali</h1>
-            <div className="underline"></div>
+
+            {/* <div className="underline"></div> */}
+           <Underline hero/>
+           
             <h4>Tidigare säljare, läser till systemutvecklare</h4>
         
+        <br />
+
         <div className ="stuffaboutme">
             - 🔭 Detta är min portfolio sida
             <br />
@@ -116,11 +143,14 @@ const Hero = () => {
             - 🤔 I’m looking for help with anything frontend :)
             <br /> */}
             <br/>
-            - 💬 Jag tycker om att träffa nya personer
-            <br />
-            - 😄 Som främsta fritidsintressen har jag träning och matlagning<br />- 💜{" "}
+            {/* - 💬 Jag tycker om att träffa nya personer
+            <br /> */}
+            - 😄 På fritiden brukar jag träna<br />- 💜{" "}
+          
             <a target="_blank" rel="noopener noreferrer" href="https://strapi.io/documentation/v3.x/getting-started/introduction.html"> Strapi </a>
+          
             ,{""}
+          
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -128,6 +158,7 @@ const Hero = () => {
             >
               React
             </a>
+            
             ,{" "}
 
             {/* <a
@@ -153,9 +184,16 @@ const Hero = () => {
             - 📫 Ni kan nå mig på nedanstående länkar
             <br />
             </div>
-            <Link to="/contact" className="btn">
+
+           <Contactbutton> 
+           <ButtonComp name="kontakta mig" to="/contact" /> 
+           </Contactbutton>
+
+           <ButtonComp name="Mitt CV" to="/contact" />
+            {/* <Link to="/contact" className="btn">
               kontakta mig
-            </Link>
+            </Link> */}
+            <br/> <br/>
             <SocialLinks />
           </div>
           </HeroInfo>

@@ -3,19 +3,25 @@ import Layout from "../components/Layout"
 import { graphql } from "gatsby"
 import Blogs from "../components/Blogs"
 import SEO from "../components/SEO"
-// ...GatsbyImageSharpFluid
+import styled from "styled-components"
+
+const StyledBlogContainer = styled.section`
+  background: ${({ theme }) => theme.colors.grey10};
+  min-height: calc(100vh - 5rem - 9rem);
+`
 
 const Blog = ({
   data: {
     allStrapiBlogs: { nodes: blogs },
   },
+  
 }) => {
   return (
     <Layout>
       <SEO title="Bloggen" description="Bloggsidan" />
-      <section className="blog-page">
+      <StyledBlogContainer>
         <Blogs blogs={blogs} title="Alla artiklar" />
-      </section>
+      </StyledBlogContainer>
     </Layout>
   )
 }
