@@ -8,7 +8,7 @@ import Projects from "../components/Projects"
 import Blogs from "../components/Blogs"
 import SEO from "../components/SEO"
 
-// Here we define the homepage
+//Main page/ Homepage
 
 export default ({ data }) => {
   const {

@@ -10,7 +10,7 @@ import styled from "styled-components"
   element in this case.
 */
 
-const StyledSidebar = styled.aside`
+const SideBarStyling = styled.aside`
   background: ${({ theme }) => theme.colors.grey10};
   position: fixed;
   top: 0;
@@ -29,7 +29,7 @@ const StyledSidebar = styled.aside`
   }
 
 `
-const SidebarButton = styled.button`
+const SidebarButtonStyling = styled.button`
   position: absolute;
   right: 4.75%;
   top: 2.75%;
@@ -42,13 +42,13 @@ const SidebarButton = styled.button`
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
   return (
-    <StyledSidebar isOpen={isOpen}>
-      <SidebarButton onClick={toggleSidebar}>
+    <SideBarStyling isOpen={isOpen}>
+      <SidebarButtonStyling onClick={toggleSidebar}>
         <FaTimes />
-      </SidebarButton>
+      </SidebarButtonStyling>
       {isOpen && <Links closeSidebar={toggleSidebar} type="sidebar" />}
       <SocialLinks />
-    </StyledSidebar>
+    </SideBarStyling>
   )
 }
 

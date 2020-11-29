@@ -11,22 +11,19 @@ export default [
   {
     id: 1,
     icon: <FaCode style={iconStyle} />,
-    title: "Frontend utveckling",
-    text: `Jag har kunskap i bland annat JavaScript och React. Jag kan hjälpa er med att förbättra eller utveckla en frontend, någonting som jag 
-    håller på med just nu vid ett företag. Jag tycker att hela processen är intressant med att 'översätta' komplex logik som ibland finns i 
-    backend till en användarvänlig produkt i frontend.`,
+    title: "Systemutveckling.NET",
+    text: `Har jobbat en hel del med ASP.NET Core och Javascript, samt med databaser, windows forms och konsoll applikationer i C#`,
   },
   {
     id: 2,
     icon: <FaSketch style={iconStyle} />,
-    title: "Full stack utveckling",
-    text: `Efter min studie är jag utbildad till fullstack utvecklare. Under utbildingen har jag lärt mig om bland annat databasutveckling, deployment 
-    i molnet och vi fick lära oss om att sätta upp ett webbasserat system med hjälp av C#.Net (MVC) och Entity Framework.`,
+    title: "Backend/frontend",
+    text: `Jag kan jobba med både back och frontend efter utbildningen.`,
   },
   {
     id: 3,
     icon: <FaAndroid style={iconStyle} />,
-    title: "Testning",
-    text: `Jag kan också hjälpa er med testning av mjukvara. Jag har lärt mig om test driven utveckling (TDD) och ska snart fördjupa mig vidare i testning och certifiering av mjukvara.`,
+    title: "Låthemsida, todolista och winforms program",
+    text: `Tidigare under utbildningen har jag skapat en hemsida i ASP.NET Core där man kan administera låtar. Jag har också tillsammans med några andra byggt en todo sida i Javascript där man kan kolla på saker man har tänkt att göra, samt kunna lägga till och ta bort sådana. Tidigare jobbade jag med windows forms applikationer i C# där jag skapade olika användbara program. `,
   },
 ]

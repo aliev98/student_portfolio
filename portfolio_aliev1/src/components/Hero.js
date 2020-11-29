@@ -5,10 +5,10 @@ import { graphql, useStaticQuery } from "gatsby"
 import SocialLinks from "../constants/socialLinks"
 // ...GatsbyImageSharpFluid
 import styled from "styled-components"
-import ButtonComp from "./ButtonLink"
-import {Underline}   from "./Underline"
+import ButtonComp from "./other/ButtonComp"
+import {Underline}   from "./other/Underline"
 
-const StyledHero = styled.header`
+const MainHeroStyling = styled.header`
   margin-top: -5rem;
   padding-top: 5rem;
   height: 100vh;
@@ -16,7 +16,7 @@ const StyledHero = styled.header`
   position: relative;
 `
 
-const HeroSection = styled.section`
+const SectionSyling = styled.section`
   width: 90vw;
   margin: 0 auto;
   max-width: ${({ theme }) => theme.widths.maxWidth};
@@ -31,7 +31,7 @@ const HeroSection = styled.section`
 
 `
 
-const ImageWrapper = styled.div`
+const ImageWrap = styled.div`
 
   /* display: none; */
     grid-row: 1/2;
@@ -83,19 +83,6 @@ const Contactbutton = styled.div`
 margin: 1rem 0 1rem 0;
 `
 
-const StyledButton = styled.button`
-
-margin: 0.3rem 1rem 0.3rem 0;
-
-a{
-  color: ${({ theme }) => theme.colors.primary9};
-  &:hover {
-    color:${({ theme }) => theme.colors.primary1}
-     
-}
-}
-`
-
 const query = graphql`
   {
     file(relativePath: { eq: "hero-img.jpg" }) {
@@ -120,9 +107,9 @@ const Hero = () => {
 
   return (
     // <header className="hero">
-    <StyledHero>
+    <MainHeroStyling>
       {/* <div className="section-center hero-center"> */}
-      <HeroSection>
+      <SectionSyling>
         {/* <article className="hero-info"> */}
         <HeroInfo>
           <div>
@@ -161,7 +148,7 @@ const Hero = () => {
             
             ,{" "}
 
-            {/* <a
+            <a
               target="_blank"
               rel="noopener noreferrer"
               href="https://www.gatsbyjs.org/docs/"
@@ -175,7 +162,9 @@ const Hero = () => {
               href="https://styled-components.com/docs"
             >
               Styled Components
-            </a> */}
+            </a>
+
+
             {/* <br />
             - ⚡ Fun fact: I used to fly planes
             <br /> */}
@@ -189,7 +178,7 @@ const Hero = () => {
            <ButtonComp name="kontakta mig" to="/contact" /> 
            </Contactbutton>
 
-           <ButtonComp name="Mitt CV" to="/contact" />
+           <ButtonComp name="Mitt cv" to="/about" />
             {/* <Link to="/contact" className="btn">
               kontakta mig
             </Link> */}
@@ -199,13 +188,13 @@ const Hero = () => {
           </HeroInfo>
 
         {/* </article> */}
-        <ImageWrapper>
+        <ImageWrap>
         <Image fluid={fluid} className="hero-img" />
-        </ImageWrapper>
+        </ImageWrap>
       {/* </div> */}
 
-      </HeroSection>
-    </StyledHero>
+      </SectionSyling>
+    </MainHeroStyling>
   // {/* </header> */}
   )
 }

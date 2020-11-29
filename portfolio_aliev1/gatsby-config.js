@@ -11,7 +11,7 @@ module.exports = {
     author: "@aliev",
     twitterUsername: "@aliev98",
     image: "/twitter-img.png",
-    siteUrl: "https://my-amazing-portflio.netlify.app",
+    siteUrl: "https://ali-aliev-publiceringsverktyg.netlify.app/",
   },
   
   plugins: [

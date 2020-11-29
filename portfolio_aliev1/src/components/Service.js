@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Underline } from "./Underline"
+import { Underline } from "./other/Underline"
 
 // This component will hold the content of one service card
 

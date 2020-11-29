@@ -5,7 +5,7 @@ import Blogs from "../components/Blogs"
 import SEO from "../components/SEO"
 import styled from "styled-components"
 
-const StyledBlogContainer = styled.section`
+const BlogSectionStyling = styled.section`
   background: ${({ theme }) => theme.colors.grey10};
   min-height: calc(100vh - 5rem - 9rem);
 `
@@ -19,9 +19,9 @@ const Blog = ({
   return (
     <Layout>
       <SEO title="Bloggen" description="Bloggsidan" />
-      <StyledBlogContainer>
+      <BlogSectionStyling>
         <Blogs blogs={blogs} title="Alla artiklar" />
-      </StyledBlogContainer>
+      </BlogSectionStyling>
     </Layout>
   )
 }

@@ -2,7 +2,7 @@ import React from "react"
 import Layout from "../components/Layout"
 import { graphql } from "gatsby"
 import Image from "gatsby-image"
-import ButtonComp from "../components/ButtonLink"
+import ButtonComp from "../components/other/ButtonComp"
 import ReactMarkdown from "react-markdown"
 import SEO from "../components/SEO"
 import downloadFile from "../../static/cv.pdf"
@@ -10,12 +10,12 @@ import styled from "styled-components"
 
 // Here we define the about page
 
-const StyledAboutPage = styled.section`
+const AboutStyling = styled.section`
   background: ${({ theme }) => theme.colors.grey10};
   min-height: calc(100vh - 5rem - 9rem);
   padding: 7rem 0;
 `
-const AboutContentContainer = styled.div`
+const AboutPart = styled.div`
   width: 90vw;
   margin: 0 auto;
   max-width: 1170px;
@@ -27,7 +27,7 @@ const AboutContentContainer = styled.div`
     column-gap: 4rem;
   }
 `
-const StyledAboutImage = styled(props => <Image {...props} />)`
+const ImageInAbout = styled(props => <Image {...props} />)`
   margin-bottom: 2rem;
   height: 25rem;
   @media screen and (min-width: 992px) {
@@ -35,7 +35,7 @@ const StyledAboutImage = styled(props => <Image {...props} />)`
     margin-bottom: 0;
   }
 `
-const AboutTextContainer = styled.article`
+const TextInAbout = styled.article`
   grid-column: 6 / -1;
   p {
     line-height: 2;
@@ -47,7 +47,8 @@ const AboutTextContainer = styled.article`
     }
   }
 `
-const StyledStack = styled.div`
+
+const StackStyling = styled.div`
   span {
     display: inline-block;
     background: ${({ theme }) => theme.colors.grey9};
@@ -66,23 +67,27 @@ const About = ({
     about: { nodes },
   },
 }) => {
+
   //console.log(nodes)
   const { info, stack, title, image } = nodes[0]
   return (
     <Layout>
-      <SEO title="CV" description="Erics CV" />
-      <StyledAboutPage>
-        <AboutContentContainer>
-          <StyledAboutImage fluid={image.childImageSharp.fluid} />
-          <AboutTextContainer>
+      <SEO title="CV" description="Alis CV" />
+      <AboutStyling>
+        <AboutPart>
+          <ImageInAbout fluid={image.childImageSharp.fluid} />
+          <TextInAbout>
             {/* <Title title={title} */}
             {/*<p>{info}</p>*/}
             <ReactMarkdown source={info} />
-            <StyledStack>
+            
+            
+            <StackStyling>
               {stack.map(item => {
                 return <span key={item.id}>{item.title}</span>
               })}
-            </StyledStack>
+              
+            </StackStyling>
 
             <button>
               <a href={downloadFile} download>
@@ -91,10 +96,10 @@ const About = ({
               {` `}
             </button>
             <ButtonComp name="kontakta mig" to="/contact" />
-          </AboutTextContainer>
-        </AboutContentContainer>
+          </TextInAbout>
+        </AboutPart>
         <></>
-      </StyledAboutPage>
+      </AboutStyling>
     </Layout>
   )
 }

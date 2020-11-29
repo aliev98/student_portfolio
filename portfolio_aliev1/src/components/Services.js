@@ -1,19 +1,27 @@
 import React from "react"
-import Title from "./Title"
+import Title from "./other/Title"
 import services from "../constants/services"
-import OuterContentContainer from "./OuterContentContainer"
-import InsidePart from "./InnerContentContainer"
+// import OuterContentContainer from "./OuterContentContainer"
+import InsidePart from "./other/InnerSection"
 import Service from "./Service"
+import styled from "styled-components"
 
-/*
- This component defines the services section
- I always try to break down a component into smaller ones.
- Service is an example of that. Almost always when you map over 
- a piece of JSX you can create a component out of that.  
-*/
+
+const ContainerStyling = styled.section`
+  padding: 5rem 0;
+  background: ${({ theme, grey }) => grey && theme.colors.grey10};
+`
+
+const ServicesContainer = ({ children, grey }) => {
+  return <ContainerStyling grey={grey}>{children}</ContainerStyling>
+}
+
+
+
+
 const Services = () => {
   return (
-    <OuterContentContainer grey>
+    <ServicesContainer grey>
       <Title title="Tjänster" />
       <InsidePart type="services">
         {services.map(({ id, icon, title, text }) => {
@@ -22,7 +30,7 @@ const Services = () => {
           )
         })}
       </InsidePart>
-    </OuterContentContainer>
+    </ServicesContainer>
   )
 }
 

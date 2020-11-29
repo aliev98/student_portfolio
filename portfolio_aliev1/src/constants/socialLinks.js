@@ -12,17 +12,12 @@ const data = [
   {
     id: 1,
     icon: <FaLinkedin/>,
-    url: "https://www.linkedin.com/in/vandenoutenaar/",
-  },  
-  {
-    id: 2,
-    icon: <FaTwitterSquare />,
-    url: "https://twitter.com/EricOutenaar",
+    url: "https://www.linkedin.com/in/ali-elias-b7b776181/",
   },
   {
-    id: 3,
+    id: 2,
     icon: <FaFacebookSquare/>,
-    url: "https://m.facebook.com/eric.vandenoutenaar",
+    url: "https://www.facebook.com/ali.elias.9484r/",
   },
 ]
 
@@ -40,7 +35,7 @@ const links = data.map(link => {
 
 const StyledList = styled.ul`
   margin: ${({ type }) =>
-    type === "footer" ? "1rem auto 0rem 0rem" : "1rem 0 0 0"}
+    type === "footer" ? "1rem auto 0rem 0rem" : "1rem 0 0 0"};
   width: 10rem;
   display: flex;
   justify-content: ${({ type }) =>
@@ -63,6 +58,7 @@ const StyledList = styled.ul`
     animation: ${({ type }) =>
       type !== "footer" && "slideUp 0.5s ease-in-out 0.3s forwards"};
   }
+
   li:nth-of-type(1) {
     animation-delay: 0.25s;
   }

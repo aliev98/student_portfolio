@@ -36,7 +36,7 @@ import styled from "styled-components"
 */
 
 
-const StyledNavBar = styled.nav`
+const NavbarStyling = styled.nav`
 
   position: sticky;
   top: 0;
@@ -50,6 +50,26 @@ const StyledNavBar = styled.nav`
   z-index: 200;
   background: ${({ theme }) => theme.colors.primary3};
 `
+const NavHeader = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  
+  img {
+    display: none;
+  }
+
+  @media screen and (min-width: 865px) {
+    justify-content: space-between;
+    
+    img {
+      display: block;
+      margin-bottom: 0.375rem;
+      height:3rem;
+    }
+  }
+`
+
 
 const NavCenter = styled.div`
   width: 90vw;
@@ -63,25 +83,7 @@ const NavCenter = styled.div`
   }
 
 `
-const NavHeader = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  
-  img {
-    display: none;
-  }
-
-  @media screen and (min-width: 865px) {
-    justify-content: space-between;
-    img {
-      display: block;
-      margin-bottom: 0.375rem;
-      height:3rem;
-    }
-  }
-`
-const NavLink = styled.div`
+const NavLinks = styled.div`
   ul {
     display: none;
     @media screen and (min-width: 768px) {
@@ -110,7 +112,7 @@ const NavLink = styled.div`
     }
   }
 `
-const ToggleButton = styled.button`
+const BtnToggle = styled.button`
   font-size: 2rem;
   background: transparent;
   border-color: transparent;
@@ -128,20 +130,20 @@ const ToggleButton = styled.button`
 `
 export const Navbar = ({ toggleSidebar }) => {
   return (
-    <StyledNavBar>
+    <NavbarStyling>
       <NavCenter>
         
         <NavHeader>
           <img src={logo} alt="logo" />
-          <ToggleButton  onClick={toggleSidebar}>
+          <BtnToggle  onClick={toggleSidebar}>
             <FaAlignRight></FaAlignRight>
-          </ToggleButton>
+          </BtnToggle>
         </NavHeader>
 
-        <NavLink>
+        <NavLinks>
           <Links type="navbar"/>
-        </NavLink>
+        </NavLinks>
       </NavCenter>
-    </StyledNavBar>
+    </NavbarStyling>
   )
 }

@@ -439,9 +439,12 @@ Hero
 .hero-info {
   background: var(--clr-primary-10);
 }
-.hero-img {
+
+/* .hero-img {
   display: none;
-}
+} */
+
+
 .hero-info h4 {
   color: var(--clr-grey-5);
 }
@@ -479,6 +482,7 @@ Hero
     grid-column: 6/-1;
   }
 }
+
 @media screen and (min-width: 1170px) {
   .hero h4 {
     font-size: 1rem;

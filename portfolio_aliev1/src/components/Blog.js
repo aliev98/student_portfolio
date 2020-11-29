@@ -20,7 +20,6 @@ const StyledBlog = styled.article`
   transform: scale(1.02);
 }
 
-
 `
 
 const StyledImage = styled ( props => <Image {...props} />)`
@@ -45,11 +44,12 @@ const BlogCard = styled.div`
     color: ${({ theme }) => theme.colors.grey1};
   }
 `
-const Footer = styled.div` {
+const Footer = styled.div`
+ 
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
+  
 
   p {
     margin-bottom: 0;

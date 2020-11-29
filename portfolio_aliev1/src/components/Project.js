@@ -6,7 +6,7 @@ import styled from "styled-components"
 
 // Here we create one 'Project in focus'
 
-const StyledImage = styled(props => <Image {...props} />)`
+const ImageStyling = styled(props => <Image {...props} />)`
   border-top-left-radius: ${({ theme }) => theme.radius.radius};
   border-top-right-radius: ${({ theme }) => theme.radius.radius};
   height: 19rem;
@@ -39,7 +39,7 @@ const StyledImage = styled(props => <Image {...props} />)`
   }
 `
 
-const ProjectInfo = styled.div`
+const ProjectInfoPart = styled.div`
   background: ${({ theme }) => theme.colors.white};
   padding: 1rem 2rem;
   border-bottom-left-radius: ${({ theme }) => theme.radius.radius};
@@ -62,7 +62,7 @@ const ProjectInfo = styled.div`
   }
 `
 
-const StyledProject = styled.article`
+const ProjectStyling = styled.article`
   display: grid;
   margin-bottom: 4rem;
 
@@ -71,7 +71,7 @@ const StyledProject = styled.article`
     align-items: center;
   }
 
-  :hover ${StyledImage} ::after {
+  :hover ${ImageStyling} ::after {
     opacity: 0;
   }
 `
@@ -110,11 +110,11 @@ const ProjectStack = styled.div`
 `
 const Project = ({ description, title, github, stack, url, image, index }) => {
   return (
-    <StyledProject>
+    <ProjectStyling>
       {image && (
-        <StyledImage fluid={image.childImageSharp.fluid} index={index} />
+        <ImageStyling fluid={image.childImageSharp.fluid} index={index} />
       )}
-      <ProjectInfo index={index}>
+      <ProjectInfoPart index={index}>
         <ProjectNumber>0{index + 1}.</ProjectNumber>
         <h3>{title || "Projekt"}</h3>
         <p>{description}</p>
@@ -140,8 +140,8 @@ const Project = ({ description, title, github, stack, url, image, index }) => {
             </a>
           )}
         </ProjectLinks>
-      </ProjectInfo>
-    </StyledProject>
+      </ProjectInfoPart>
+    </ProjectStyling>
   )
 }
 

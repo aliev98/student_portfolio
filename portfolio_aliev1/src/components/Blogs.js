@@ -1,15 +1,23 @@
 import React from "react"
-import Title from "./Title"
+import Title from "./other/Title"
 import Blog from "./Blog"
-import OuterContentContainer from "./OuterContentContainer"
-import InsidePart from "./InnerContentContainer"
-import ButtonComp from "./ButtonLink"
+import InsidePart from "./other/InnerSection"
+import ButtonComp from "./other/ButtonComp"
+import styled from "styled-components"
 
-// Here we define the blog section
+
+const StyledContainer = styled.section`
+  padding: 5rem 0;
+  background: ${({ theme, grey }) => grey && theme.colors.grey10};
+`
+
+const BlogsContainer = ({ children, grey }) => {
+  return <StyledContainer grey={grey}>{children}</StyledContainer>
+}
 
 export const Blogs = ({ blogs, title, showLink }) => {
   return (
-    <OuterContentContainer>
+    <BlogsContainer>
       <Title title={title} />
       <InsidePart type="blogs">
         {blogs.map(blog => {
@@ -17,7 +25,7 @@ export const Blogs = ({ blogs, title, showLink }) => {
         })}
       </InsidePart>
       {showLink && <ButtonComp to="/blog" center name="Alla artiklar" />}
-    </OuterContentContainer>
+    </BlogsContainer>
   )
 }
 

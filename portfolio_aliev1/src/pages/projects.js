@@ -7,7 +7,7 @@ import styled from "styled-components"
 
 // Here we define the projects page
 
-const ProjectsContainer = styled.section`
+const AllProjectsContainer = styled.section`
   background: ${({ theme }) => theme.colors.grey10};
   min-height: calc(100vh - 5rem - 9rem);
 `
@@ -20,9 +20,9 @@ const ProjectsPage = ({
   return (
     <Layout>
       <SEO title="Projekt" description="Projektsidan" />
-      <ProjectsContainer>
+      <AllProjectsContainer>
         <Projects projects={projects} title="Alla projekt" />
-      </ProjectsContainer>
+      </AllProjectsContainer>
     </Layout>
   )
 }

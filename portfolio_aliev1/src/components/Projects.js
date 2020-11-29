@@ -1,14 +1,25 @@
 import React from "react"
-import Title from "./Title"
+import Title from "./other/Title"
 import Project from "./Project"
-import OuterContentContainer from "./OuterContentContainer"
-import InsidePart from "./InnerContentContainer"
-import ButtonComp from "./ButtonLink"
+import InsidePart from "./other/InnerSection"
+import ButtonComp from "./other/ButtonComp"
+import styled from "styled-components"
 
-// Here we define the Projects section
+
+
+const StyledContainer = styled.section`
+  padding: 5rem 0;
+  background: ${({ theme, grey }) => grey && theme.colors.grey10};
+`
+
+const ProjectsContainer = ({ children, grey }) => {
+  return <StyledContainer grey={grey}>{children}</StyledContainer>
+}
+
+
 const Projects = ({ projects, title, showLink }) => {
   return (
-    <OuterContentContainer>
+    <ProjectsContainer>
       <Title title={title} />
       <InsidePart type="projects">
         {projects.map((project, index) => {
@@ -16,7 +27,7 @@ const Projects = ({ projects, title, showLink }) => {
         })}
       </InsidePart>
       {showLink && <ButtonComp to="/projects" center name="Alla projekt" />}
-    </OuterContentContainer>
+    </ProjectsContainer>
   )
 }
 

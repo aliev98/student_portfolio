@@ -2,13 +2,13 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import ReactMarkdown from "react-markdown"
-import ButtonLink from "../components/ButtonLink"
+import ButtonLink from "../components/other/ButtonComp"
 import SEO from "../components/SEO"
 import styled from "styled-components"
 
 // With the help of this template Gatsby will create a page for each blogpost
 
-const StyledBlogTemplate = styled.section`
+const TemplateBlogStyling = styled.section`
   background: ${({ theme }) => theme.colors.grey10};
   min-height: calc(100vh - 5rem - 9rem);
 
@@ -72,14 +72,14 @@ const ComponentName = ({ data }) => {
   return (
     <Layout>
       <SEO title={title} description={desc} />
-      <StyledBlogTemplate>
+      <TemplateBlogStyling>
         <ContentContainer>
           <article>
             <ReactMarkdown source={content} />
           </article>
           <ButtonLink to="/blog" name="Alla artiklar" center   />
         </ContentContainer>
-      </StyledBlogTemplate>
+      </TemplateBlogStyling>
     </Layout>
   )
 }

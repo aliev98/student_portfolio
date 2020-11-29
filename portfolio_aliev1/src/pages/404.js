@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/Layout"
 import styled from "styled-components"
-import ButtonComp from "../components/ButtonLink"
+import ButtonComp from "../components/other/ButtonComp"
 
 // Our 404 page
 

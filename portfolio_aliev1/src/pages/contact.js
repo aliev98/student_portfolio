@@ -5,7 +5,7 @@ import styled from "styled-components"
 
 // Here we define the contact page and make use of formspree
 
-const StyledContactPage = styled.section`
+const ContactSectionStyling = styled.section`
   display: grid;
   place-items: center;
   padding: 5rem 0;
@@ -14,7 +14,7 @@ const StyledContactPage = styled.section`
 `
 
 
-const StyledContactForm = styled.article`
+const ContactFormStyling = styled.article`
   background: ${({ theme }) => theme.colors.white};
   border-radius: ${({ theme }) => theme.radius.radius};
   text-align: center;
@@ -36,7 +36,7 @@ const StyledContactForm = styled.article`
 const InputFieldsContainer = styled.div`
   padding: 1rem 1.5rem;
 `
-const StyledInput = styled.input`
+const InputStyling = styled.input`
   display: block;
   width: 100%;
   padding: 0.75rem 1rem;
@@ -53,7 +53,7 @@ const StyledInput = styled.input`
     letter-spacing: ${({ theme }) => theme.spacings.spacing};
   }
 `
-const StyledTextArea = styled.textarea`
+const TextInputStyling = styled.textarea`
   display: block;
   width: 100%;
   padding: 0.75rem 1rem;
@@ -71,7 +71,7 @@ const StyledTextArea = styled.textarea`
   }
 `
 
-const StyledButton = styled.button`¨
+const ButtonStyling = styled.button`¨
 {
 display: block;
 width: 100%;
@@ -87,33 +87,33 @@ const contact = () => {
   return (
     <Layout>
       <SEO title="Kontakt" description="Kontaktsidan" />
-      <StyledContactPage>
-        <StyledContactForm>
+      <ContactSectionStyling>
+        <ContactFormStyling>
           <h3>kontakta mig</h3>
           <form action="https://formspree.io/mqkgeqzd" method="POST">
             <InputFieldsContainer>
-              <StyledInput
+              <InputStyling
                 type="text"
                 placeholder="namn"
                 name="name"
               />
-              <StyledInput
+              <InputStyling
                 type="email"
                 placeholder="epost"
                 name="email"
               />
-              <StyledTextArea
+              <TextInputStyling
                 name="message"
                 rows="5"
                 placeholder="meddelande"
-              ></StyledTextArea>
+              ></TextInputStyling>
             </InputFieldsContainer>
-            <StyledButton type="submit">
+            <ButtonStyling type="submit">
               Kontakta mig
-            </StyledButton>
+            </ButtonStyling>
           </form>
-        </StyledContactForm>
-      </StyledContactPage>
+        </ContactFormStyling>
+      </ContactSectionStyling>
     </Layout>
   )
 }

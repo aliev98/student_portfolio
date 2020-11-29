@@ -19,7 +19,7 @@ const data = [
   },
   {
     id: 2,
-    text: "mitt CV",
+    text: "Om mig / CV",
     url: "/about/",
   },
   {
