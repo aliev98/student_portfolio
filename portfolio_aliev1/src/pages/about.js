@@ -66,6 +66,8 @@ const About = ({
   data: {
     about: { nodes },
   },
+
+
 }) => {
 
   //console.log(nodes)
@@ -80,7 +82,6 @@ const About = ({
             {/* <Title title={title} */}
             {/*<p>{info}</p>*/}
             <ReactMarkdown source={info} />
-            
             
             <StackStyling>
               {stack.map(item => {

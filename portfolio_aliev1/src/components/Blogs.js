@@ -19,11 +19,13 @@ export const Blogs = ({ blogs, title, showLink }) => {
   return (
     <BlogsContainer>
       <Title title={title} />
+
       <InsidePart type="blogs">
         {blogs.map(blog => {
           return <Blog key={blog.id} {...blog} />
         })}
       </InsidePart>
+      
       {showLink && <ButtonComp to="/blog" center name="Alla artiklar" />}
     </BlogsContainer>
   )

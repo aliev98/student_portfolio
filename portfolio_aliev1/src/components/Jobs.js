@@ -124,6 +124,9 @@ const StyledJobDescription = styled.div`
  in order to set the inline style
 */
 
+
+
+
 const JobDescription = ({ name }) => {
   const { colors } = useContext(ThemeContext)
 

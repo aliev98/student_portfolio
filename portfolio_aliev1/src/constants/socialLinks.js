@@ -5,6 +5,7 @@ import {
   FaLinkedin,
   FaTwitterSquare,
 } from "react-icons/fa"
+import theme from "../themes/theme"
 
 // This was also a tricky component because of the animation
 
@@ -21,8 +22,6 @@ const data = [
   },
 ]
 
-
-  
 const links = data.map(link => {
   return (
     <li key={link.id}>
@@ -35,7 +34,7 @@ const links = data.map(link => {
 
 const StyledList = styled.ul`
   margin: ${({ type }) =>
-    type === "footer" ? "1rem auto 0rem 0rem" : "1rem 0 0 0"};
+  type === "footer" ? "1rem auto 0rem 0rem" : "1rem 0 0 0"};
   width: 10rem;
   display: flex;
   justify-content: ${({ type }) =>
@@ -48,6 +47,7 @@ const StyledList = styled.ul`
       type === "footer" ? theme.colors.white : theme.colors.grey1};
     transition: ${({ theme }) => theme.transitions.transition};
     padding: 0 1rem 0 0;
+    
     :hover {
       color: ${({ theme }) => theme.colors.primary5};
     }

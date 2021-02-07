@@ -13,7 +13,6 @@ const ContactSectionStyling = styled.section`
   min-height: calc(100vh - 5rem - 9rem);
 `
 
-
 const ContactFormStyling = styled.article`
   background: ${({ theme }) => theme.colors.white};
   border-radius: ${({ theme }) => theme.radius.radius};
@@ -71,8 +70,8 @@ const TextInputStyling = styled.textarea`
   }
 `
 
-const ButtonStyling = styled.button`¨
-{
+const ButtonStyling = styled.button`
+
 display: block;
 width: 100%;
 padding: 1rem;
@@ -80,7 +79,6 @@ border-bottom-left-radius: ${({ theme }) => theme.radius.radius};
 border-bottom-right-radius: ${({ theme }) => theme.radius.radius};
 border-top-right-radius: 0;
 border-top-left-radius: 0;
-}
 `
 
 const contact = () => {
@@ -92,6 +90,7 @@ const contact = () => {
           <h3>kontakta mig</h3>
           <form action="https://formspree.io/mqkgeqzd" method="POST">
             <InputFieldsContainer>
+            
               <InputStyling
                 type="text"
                 placeholder="namn"

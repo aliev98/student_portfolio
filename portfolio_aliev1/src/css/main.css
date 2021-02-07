@@ -436,6 +436,7 @@ Hero
   margin-bottom: 0.5rem;
   margin-left: 0;
 }
+
 .hero-info {
   background: var(--clr-primary-10);
 }
@@ -618,6 +619,7 @@ Jobs
 .job-icon {
   color: var(--clr-primary-5);
 }
+
 @media screen and (min-width: 992px) {
   .jobs-center {
     width: 90vw;
@@ -629,11 +631,12 @@ Jobs
     flex-direction: column;
     justify-content: flex-start;
   }
+
   .job-btn {
     margin-bottom: 1rem;
   }
   .active-btn {
-    box-shadow: -2px 0 var(--clr-primary-5);
+    box-shadow: -2px 0 var(--clr-primary-5); 
   }
   .job-btn:hover {
     box-shadow: -2px 0 var(--clr-primary-5);

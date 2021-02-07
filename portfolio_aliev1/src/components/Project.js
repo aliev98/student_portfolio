@@ -32,8 +32,8 @@ const ImageStyling = styled(props => <Image {...props} />)`
   }
   @media screen and (min-width: 992px) {
     grid-column: ${({ index }) => (index % 2 !== 0 ? "5/-1" : "1 / span 8")};
-    grid-row: 1 / 1;
-    height: 30rem;
+    grid-row: 1 / 2;
+    height: 20rem;
     border-radius: ${({ theme }) => theme.radius.radius};
     box-shadow: ${({ theme }) => theme.shadows.darkShadow};
   }
@@ -51,12 +51,11 @@ const ProjectInfoPart = styled.div`
     font-size: 1.5rem;
   }
 
-  
   @media screen and (min-width: 992px) {
     border-radius: ${({ theme }) => theme.radius.radius};
     box-shadow: ${({ theme }) => theme.shadows.darkShadow};
     z-index: 1;
-    grid-column: ${({ index }) => (index % 2 === 0 ? "5 / 12" : "2 / span 7")};
+    grid-column: ${({ index }) => (index % 2 === 0 ? "5/ 11" : "2 / span 7")};
     grid-row: 1 / 1;
     text-align: ${({ index }) => index % 2 === 0 && "left"};
   }
@@ -88,12 +87,14 @@ const ProjectLinks = styled.div`
     color: ${({ theme }) => theme.colors.primary5};
     font-size: 1.25rem;
     margin-right: 0.5rem;
+
     transition: ${({ theme }) => theme.transitions.transition};
     :hover {
       color: ${({ theme }) => theme.colors.primary1};
     }
   }
 `
+
 const ProjectStack = styled.div`
   span {
     margin-bottom: 1rem;
@@ -108,21 +109,26 @@ const ProjectStack = styled.div`
     font-size: 0.85rem;
   }
 `
+
 const Project = ({ description, title, github, stack, url, image, index }) => {
   return (
     <ProjectStyling>
+
       {image && (
         <ImageStyling fluid={image.childImageSharp.fluid} index={index} />
       )}
+      
       <ProjectInfoPart index={index}>
-        <ProjectNumber>0{index + 1}.</ProjectNumber>
+        <ProjectNumber>0{index+1}.</ProjectNumber>
         <h3>{title || "Projekt"}</h3>
         <p>{description}</p>
+       
         <ProjectStack>
           {stack.map(item => {
             return <span key={item.id}>{item.title}</span>
           })}
         </ProjectStack>
+        
         <ProjectLinks>
           {/*
           When I don't have links to my projects, I have fill the required 

@@ -12,9 +12,7 @@ const UnderlineStyling = styled.div`
          height: 0.25rem;
          background: ${({ theme }) => theme.colors.primary5};
          margin: ${({ hero }) => `0 ${hero ? "0" : "auto"} 1.25rem`};
-       `
-
-
+`
 
 export const Underline = ({hero}) => {
   return (<UnderlineStyling hero={hero}/>)

@@ -2,11 +2,13 @@
   "kind": "collectionType",
   "collectionName": "blogs",
   "info": {
-    "name": "Blog"
+    "name": "Blog",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": false
   },
   "attributes": {
     "title": {
@@ -37,11 +39,14 @@
       "type": "enumeration",
       "enum": [
         "html",
-        "sass",
-        "pug",
-        "styledComponents",
-        "react",
-        "gatsby"
+        "csharp",
+        "Winforms",
+        "Praktik",
+        "Sass",
+        "Rug",
+        "RtyledComponents",
+        "React",
+        "Gatsby"
       ],
       "required": true
     },

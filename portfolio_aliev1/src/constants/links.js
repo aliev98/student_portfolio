@@ -74,7 +74,9 @@ a {
     background: ${({theme})=> theme.colors.primary9};
     color: ${({theme})=> theme.colors.primary5};
   }
-  `
+}
+
+`
   const StyledNavBarList = styled.ul`
   a{
     font-size: 1rem;
@@ -101,9 +103,9 @@ export default ({type="navbar"}) => {
           <></>
         )
       )}
+      
     </StyledSideBarList>
   ) : (
     <StyledNavBarList>{tempLinks}</StyledNavBarList>
   )
   }
-  

@@ -13,8 +13,7 @@ const StyledBlog = styled.article`
   border-radius: ${({ theme }) => theme.radius.radius};
   box-shadow: ${({ theme }) => theme.shadows.lightShadow};
   transition: ${({ theme }) => theme.transitions.transition};
-
-
+  
 :hover {
   box-shadow: ${({ theme }) => theme.shadows.darkShadow};
   transform: scale(1.02);

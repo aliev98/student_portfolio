@@ -14,7 +14,7 @@ const Blog = ({
   data: {
     allStrapiBlogs: { nodes: blogs },
   },
-  
+
 }) => {
   return (
     <Layout>
@@ -25,6 +25,7 @@ const Blog = ({
     </Layout>
   )
 }
+
 export const query = graphql`
   {
     allStrapiBlogs {

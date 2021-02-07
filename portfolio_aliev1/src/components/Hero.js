@@ -28,7 +28,6 @@ const SectionSyling = styled.section`
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(4, 1fr);
   }
-
 `
 
 const ImageWrap = styled.div`
@@ -192,7 +191,7 @@ const Hero = () => {
         <Image fluid={fluid} className="hero-img" />
         </ImageWrap>
       {/* </div> */}
-
+      
       </SectionSyling>
     </MainHeroStyling>
   // {/* </header> */}

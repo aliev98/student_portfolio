@@ -12,7 +12,7 @@ const StyledInnerContainer = styled.div`
     type === "blogs" && "repeat(auto-fill, minmax(368px, 1fr))"};
     column-gap: ${({ type }) => type === "blogs" && "2rem"};
   }
-
+  
   @media screen and (min-width: 676px) {
     display: ${({ type }) => type === "services" && "grid"};
     grid-template-columns: ${({ type }) => type === "services" && "1fr 1fr"};

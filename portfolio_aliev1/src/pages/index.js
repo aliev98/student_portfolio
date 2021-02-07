@@ -15,6 +15,7 @@ export default ({ data }) => {
     allStrapiProjects: { nodes: projects },
     allStrapiBlogs: { nodes: blogs },
   } = data
+
   return (
     <>
       <Layout>
@@ -23,7 +24,7 @@ export default ({ data }) => {
         <Services />
         <Jobs />
         <Projects projects={projects} title="projekt i fokus" showLink />
-        <Blogs blogs={blogs} title="Senaste artiklar" showLink />
+        <Blogs blogs = {blogs} title = "Senaste artiklar" showLink />
       </Layout>
     </>
   )
@@ -31,7 +32,7 @@ export default ({ data }) => {
 
 export const query = graphql`
   {
-    allStrapiProjects(filter: { featured: { eq: true } }) {
+    allStrapiProjects(filter: { featured: { eq: true }}) {
       nodes {
         github
         id
@@ -51,7 +52,8 @@ export const query = graphql`
         }
       }
     }
-    allStrapiBlogs(sort: { fields: date, order: DESC }, limit: 3) {
+
+    allStrapiBlogs(sort: { fields: date, order: DESC }, limit:3) {
       nodes {
         slug
         content
