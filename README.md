@@ -1,4 +1,4 @@
-To begin with, you need a cloudinary and formspree.io account, gatsby and node.js, and of course a program where you can edit code, I'd recommend Sisual Studio Code.
+To begin with, you need a cloudinary and formspree.io account, gatsby and node.js, and of course a program where you can edit code, I'd recommend Visual Studio Code.
 
 1. Clone the project
 
