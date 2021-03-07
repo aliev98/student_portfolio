@@ -1,6 +1,7 @@
 To begin with, you need a cloudinary and formspree.io account, gatsby and node.js, and of course a program where you can edit code, I'd recommend Sisual Studio Code.
 
 1. Clone the project
+
 First you need to clone the project from github.
 
 2. Running npm-install on front and backend
@@ -17,14 +18,15 @@ After that you need to run npm install on both of the directories.
 
 Open the backend folder, go to the settings.json file which is located in portfolio_backend/extensions/upload/config/settings.json, here you should fill in your own information from cloudinary. After you've done this go to the package.json file and remove strapi-provider-upload-cloudinary": "^3.0.0", you will have to download it after you've done an npm install.
 
-4. installing cloudinary
+4. Installing cloudinary
 
 ```shell
    npm i strapi-provider-upload-cloudinary@3.0.0
 ```
 
 5. Running the backend in strapi
-Now after everything is installed, we should come to the strapi admin menu in localhost:1337 by typing the following command:
+
+Now after everything is installed, we should be redirected to the strapi admin menu in localhost:1337 by typing the following command:
 
 ```shell
   npm run develop
