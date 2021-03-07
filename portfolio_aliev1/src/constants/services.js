@@ -18,8 +18,8 @@ export default [
   {
     id: 2,
     icon: <FaSketch style={iconStyle} />,
-    title: "Backend/frontend",
-    text: `Jag kan jobba med både back och frontend efter utbildningen.`,
+    title: "App design",
+    text: `Jag tycker det vore intressant att jobba med att utveckla mobila appar.`,
   },
   {
     id: 3,

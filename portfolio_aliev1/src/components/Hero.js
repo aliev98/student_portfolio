@@ -136,7 +136,7 @@ const Hero = () => {
             <a target="_blank" rel="noopener noreferrer" href="https://strapi.io/documentation/v3.x/getting-started/introduction.html"> Strapi </a>
           
             ,{""}
-          
+            
             <a
               target="_blank"
               rel="noopener noreferrer"

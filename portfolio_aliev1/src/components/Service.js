@@ -17,6 +17,7 @@ const StyledService = styled.article`
     background: ${({ theme }) => theme.colors.primary5};
     color: ${({ theme }) => theme.colors.primary9};
   }
+  
   :hover p {
     color: ${({ theme }) => theme.colors.primary9};
   }

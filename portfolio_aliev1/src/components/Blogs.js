@@ -11,6 +11,7 @@ const StyledContainer = styled.section`
   background: ${({ theme, grey }) => grey && theme.colors.grey10};
 `
 
+
 const BlogsContainer = ({ children, grey }) => {
   return <StyledContainer grey={grey}>{children}</StyledContainer>
 }
@@ -19,7 +20,6 @@ export const Blogs = ({ blogs, title, showLink }) => {
   return (
     <BlogsContainer>
       <Title title={title} />
-
       <InsidePart type="blogs">
         {blogs.map(blog => {
           return <Blog key={blog.id} {...blog} />
